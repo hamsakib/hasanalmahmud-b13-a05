@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Issues Tracker</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-icon"><img src="./assets/github-logo.png" alt=""></div>
+      <h1>GitHub Issues Tracker</h1>
+    </div>
+
+    <div class="header-actions">
+      <form id="searchForm" class="search-bar">
+        <input id="searchInput" type="text" placeholder="Search issues..." />
+        <button type="submit" class="primary-btn">Search</button>
+      </form>
+      <button id="logoutBtn" class="secondary-btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="board-shell">
+      <div class="tabs" id="tabs">
+        <button class="tab-btn active" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="open">Open</button>
+        <button class="tab-btn" data-tab="closed">Closed</button>
+      </div>
+
+      <section class="summary-card">
+        <div class="summary-left">
+          <div class="summary-icon"><img src="./assets/Aperture.png" alt=""></div>
+          <div>
+            <h2 id="issueCount">0 Issues</h2>
+            <p>Track and manage your project issues</p>
+          </div>
+        </div>
+
+        <div class="status-legend">
+          <span><span class="dot open-dot"></span> Open <strong id="openCount">0</strong></span>
+          <span><span class="dot closed-dot"></span> Closed <strong id="closedCount">0</strong></span>
+        </div>
+      </section>
+
+      <p id="activeViewText" class="active-view-text">Showing all issues</p>
+      <p id="errorMessage" class="error-message" aria-live="polite"></p>
+
+      <div id="spinner" class="spinner-wrap hidden" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Loading issues...</p>
+      </div>
+
+      <section id="issuesContainer" class="issues-grid"></section>
+    </section>
+  </main>
+
+  <dialog id="issueModal" class="issue-modal">
+    <div class="modal-top">
+      <div>
+        <p id="modalStatus" class="modal-status"></p>
+        <h3 id="modalTitle">Issue title</h3>
+        <p id="modalMeta" class="modal-meta"></p>
+      </div>
+      <button id="closeModalBtn" class="secondary-btn">Close</button>
+    </div>
+
+    <div class="modal-grid">
+      <div class="modal-field full-span">
+        <span>Description</span>
+        <p id="modalDescription"></p>
+      </div>
+      <div class="modal-field">
+        <span>Assignee</span>
+        <p id="modalAuthor"></p>
+      </div>
+      <div class="modal-field">
+        <span>Priority</span>
+        <p id="modalPriority"></p>
+      </div>
+      <div class="modal-field">
+        <span>Category</span>
+        <p id="modalCategory"></p>
+      </div>
+      <div class="modal-field">
+        <span>Label</span>
+        <p id="modalLabel"></p>
+      </div>
+      <div class="modal-field full-span">
+        <span>Created At</span>
+        <p id="modalCreatedAt"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="./script/app.js"></script>
+</body>
+</html>
