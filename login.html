@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | GitHub Issues Tracker</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-wrapper">
+    <section class="auth-card">
+      <div class="auth-logo"><img src="./assets/github-logo.png" alt=""></div>
+      <h1>GitHub Issues Tracker</h1>
+      <p class="auth-subtitle">Sign in to manage your issues</p>
+
+      <form id="loginForm" class="auth-form">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Enter Username" autocomplete="username" />
+        <p class="hint">Default: admin</p>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter Password" autocomplete="current-password" />
+        <p class="hint">Default: admin123</p>
+
+        <button type="submit" class="primary-btn full-width">Sign In</button>
+      </form>
+
+      <p class="divider">OR</p>
+
+      <div class="demo-box">
+        <p><strong>Demo Credentials:</strong></p>
+        <p>Username: admin</p>
+        <p>Password: admin123</p>
+      </div>
+
+      <p id="loginMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script type="module" src="./script/login.js"></script>
+</body>
+</html>
