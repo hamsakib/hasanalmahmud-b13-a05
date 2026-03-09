@@ -148,12 +148,14 @@ export function fillModal(issue, refs) {
   const priority = getPriority(issue);
 
   refs.modalStatus.textContent = status.toUpperCase();
-  refs.modalTitle.textContent = normalizeText(issue?.title, 'Untitled issue');
-  refs.modalMeta.textContent = `Created ${formatDate(issue?.createdAt)}`;
+  refs.modalTitle.textContent = normalizeText(
+    issue?.title, 'Untitled issue');
+  refs.modalAuthor.textContent =`• ${author}`;
+  refs.modalMeta.textContent = `• ${formatDate(issue?.createdAt)}`;
   refs.modalDescription.textContent = normalizeText(issue?.description, 'No description available.');
   refs.modalAuthor.textContent = author;
   refs.modalPriority.textContent = priority;
-  refs.modalCategory.textContent = category;
-  refs.modalLabel.textContent = label;
-  refs.modalCreatedAt.textContent = formatDate(issue?.createdAt);
+  // refs.modalCategory.textContent = category;
+  // refs.modalLabel.textContent = label;
+  // refs.modalCreatedAt.textContent = formatDate(issue?.createdAt);
 }

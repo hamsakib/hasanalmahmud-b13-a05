@@ -456,7 +456,7 @@ button {
   padding: .375rem .5rem;
   border: 1px solid var(--orange);
 }
-/* ///////////////////////// */
+
 .issue-meta,
 .modal-field p,
 .modal-field span {
@@ -533,6 +533,11 @@ button {
 .modal-top h3 {
   margin: 6px 0;
   font-size: 28px;
+}
+
+.modal-title-badges{
+    display: flex;
+    gap: .5rem;
 }
 
 .modal-grid {
