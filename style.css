@@ -389,16 +389,6 @@ button {
   border-radius: 999px;
 }
 
-.issue-status.open {
-  color: var(--green);
-  background: var(--green-soft);
-}
-
-.issue-status.closed {
-  color: var(--purple);
-  background: var(--purple-soft);
-}
-
 .issue-priority {
   font-size: 11px;
   font-weight: 700;
@@ -414,6 +404,16 @@ button {
   color: var(--text);
   font-size: 15px;
   font-weight: 700;
+
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+
+  min-height: calc(1.4em * 2);
 }
 
 .issue-title-btn:hover {

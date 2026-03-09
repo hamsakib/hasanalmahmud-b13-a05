@@ -53,6 +53,15 @@ function createBadgeClass(type, text) {
   return '';
 }
 
+function getStatusIcon(status) {
+  if (status === "open") {
+    return "assets/open.png";
+  }
+  if (status === "closed") {
+    return "assets/closed.png";
+  }
+}
+
 export function renderIssues(container, issues, onOpenDetails) {
   container.innerHTML = '';
 
@@ -82,7 +91,9 @@ export function renderIssues(container, issues, onOpenDetails) {
 
     card.innerHTML = `
       <div class="issue-top">
-        <span class="issue-status ${status}">${status}</span>
+        <span class="issue-status ${status}">
+  <img src="${getStatusIcon(status)}" alt="${status}">
+</span>
         <span class="issue-priority">${priority}</span>
       </div>
 
