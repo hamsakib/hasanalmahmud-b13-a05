@@ -94,10 +94,10 @@ export function renderIssues(container, issues, onOpenDetails) {
         <span class="badge ${createBadgeClass('category', category)}">${category}</span>
         <span class="badge label">${label}</span>
       </div>
-
+      <div><hr></div>
       <div class="issue-footer">
-        <span class="issue-meta">By ${author}</span>
-        <span class="issue-meta">${createdAt}</span>
+        <div class="issue-meta">By ${author}</div>
+        <div class="issue-meta">${createdAt}</div>
       </div>
     `;
 
