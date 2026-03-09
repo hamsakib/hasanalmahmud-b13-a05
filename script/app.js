@@ -23,17 +23,16 @@ const refs = {
   searchForm: document.getElementById('searchForm'),
   searchInput: document.getElementById('searchInput'),
   logoutBtn: document.getElementById('logoutBtn'),
+
   issueModal: document.getElementById('issueModal'),
   closeModalBtn: document.getElementById('closeModalBtn'),
-  modalStatus: document.getElementById('modalStatus'),
+
   modalTitle: document.getElementById('modalTitle'),
-  modalMeta: document.getElementById('modalMeta'),
+  modalMetaLine: document.getElementById('modalMetaLine'),
+  modalLabel: document.getElementById('modalLabel'),
   modalDescription: document.getElementById('modalDescription'),
   modalAuthor: document.getElementById('modalAuthor'),
   modalPriority: document.getElementById('modalPriority'),
-  modalCategory: document.getElementById('modalCategory'),
-  modalLabel: document.getElementById('modalLabel'),
-  modalCreatedAt: document.getElementById('modalCreatedAt'),
 };
 
 function showSpinner() {

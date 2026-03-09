@@ -142,16 +142,18 @@ export function setActiveTab(tabButtons, activeTab) {
 
 export function fillModal(issue, refs) {
   const status = getIssueStatus(issue);
-  const category = getCategoryName(issue);
   const label = getLabelName(issue);
   const author = getAuthorName(issue);
   const priority = getPriority(issue);
 
-  refs.modalStatus.textContent = status.toUpperCase();
   refs.modalTitle.textContent = normalizeText(issue?.title, 'Untitled issue');
-  refs.modalAuthor.textContent = author;
-  refs.modalMeta.textContent = `• ${formatDate(issue?.createdAt)}`;
-  refs.modalDescription.textContent = normalizeText(issue?.description, 'No description available.');
+  refs.modalMetaLine.textContent =
+    `${status.toUpperCase()} • ${status === 'closed' ? 'Closed' : 'Opened'} by ${author} • ${formatDate(issue?.createdAt)}`;
+  refs.modalLabel.textContent = label;
+  refs.modalDescription.textContent = normalizeText(
+    issue?.description,
+    'No description available.'
+  );
   refs.modalAuthor.textContent = author;
   refs.modalPriority.textContent = priority;
 }
