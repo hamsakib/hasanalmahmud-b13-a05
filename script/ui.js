@@ -105,7 +105,6 @@ export function renderIssues(container, issues, onOpenDetails) {
      <div class="issue-badges">
   ${labelsArray.map(l => `<span class="badge label">${l}</span>`).join("")}
 </div>
-      <div class= "issue-hr"> <hr> </div>
       <div class="issue-footer">
         <div class="issue-meta">By ${author}</div>
         <div class="issue-meta">${createdAt}</div>
