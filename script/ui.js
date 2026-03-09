@@ -121,10 +121,10 @@ export function setActiveTab(tabButtons, activeTab) {
 export function fillModal(issue, refs) {
   const status = issue?.status === "closed" ? "closed" : "open";
 
-  const label = issue?.labels?.[0] ?? "No label";
-  const author = issue?.author ?? "Unknown";
-  const assignee = issue?.assignee ?? "Unassigned";
-  const priority = issue?.priority ?? "Unknown";
+  const label = issue?.labels?.[0] || "No label";
+  const author = issue?.author || "Unknown";
+  const assignee = issue?.assignee || "Unassigned";
+  const priority = issue?.priority || "Unknown";
 
   refs.modalTitle.textContent = issue?.title ?? "Untitled issue";
  refs.modalMetaLine.innerHTML = `
