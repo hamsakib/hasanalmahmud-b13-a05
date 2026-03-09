@@ -605,7 +605,6 @@ button {
     font-size: 18px;
   }
 
-
   .issues-grid,
   .modal-grid {
     grid-template-columns: 1fr;
