@@ -611,6 +611,11 @@ button {
   color: white;
 }
 
+#close-btn-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
 #closeModalBtn{
     padding: .365rem 1rem;
     background-color: var(--primary);
