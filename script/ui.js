@@ -137,6 +137,6 @@ export function fillModal(issue, refs) {
 `;
   refs.modalLabel.textContent = label;
   refs.modalDescription.textContent =issue?.description ?? "No description available.";
-  refs.modalAssignee.textContent = assignee.split(/[_-]|\s/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-  refs.modalPriority.textContent = priority;
+  refs.modalAssignee.innerHTML =`<span id="aname">${assignee.split(/[_-]|\s/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}`;
+  refs.modalPriority.innerHTML =`<span id="Ptext">${priority.toUpperCase()}`;
 }

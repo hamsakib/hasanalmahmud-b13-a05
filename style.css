@@ -532,14 +532,26 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+  background-color: var(--bg);
+  border-radius: 4px;
 }
 
 .modal-field {
-  border: 1px solid var(--line);
-  border-radius: 14px;
   padding: 14px;
 }
+#aname{
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+}
 
+#Ptext{
+    background-color: var(--red);
+    color: var(--panel);
+    border-radius: 16px;
+    padding: .375rem 1rem;
+    width: 3.75rem;
+}
 .modal-field span {
   display: block;
   margin-bottom: 8px;
