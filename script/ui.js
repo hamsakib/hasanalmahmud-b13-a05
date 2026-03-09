@@ -88,6 +88,7 @@ export function renderIssues(container, issues, onOpenDetails) {
 
     const card = document.createElement('article');
     card.className = `issue-card ${status === 'open' ? 'open-border' : 'closed-border'}`;
+  const labelsArray = Array.isArray(issue.labels) ? issue.labels : [];
 
     card.innerHTML = `
       <div class="issue-top">
@@ -101,10 +102,9 @@ export function renderIssues(container, issues, onOpenDetails) {
 
       <p class="issue-desc">${description}</p>
 
-      <div class="issue-badges">
-        <span class="badge ${createBadgeClass('category', category)}">${category}</span>
-        <span class="badge label">${label}</span>
-      </div>
+     <div class="issue-badges">
+  ${labelsArray.map(l => `<span class="badge label">${l}</span>`).join("")}
+</div>
       <div class= "issue-hr"> <hr> </div>
       <div class="issue-footer">
         <div class="issue-meta">By ${author}</div>
@@ -112,7 +112,7 @@ export function renderIssues(container, issues, onOpenDetails) {
       </div>
     `;
 
-    card.querySelector('.issue-title-btn').addEventListener('click', () => onOpenDetails(id));
+   card.addEventListener('click', () => onOpenDetails(id));
     container.appendChild(card);
   });
 }
