@@ -126,16 +126,19 @@ button {
 
 .primary-btn,
 .secondary-btn,
-.tab-btn {
+.tab-btn, 
+.demo-btn {
   border: none;
   border-radius: 10px;
-  height: 42px;
-  padding: 0 18px;
+  height: 2.75rem;
+  padding: 1rem .75rem;
   font-weight: 600;
   transition: 0.2s ease;
+  width: 8.25em;
 }
 
-.primary-btn {
+.primary-btn, 
+.demo-btn {
   background: var(--primary);
   color: white;
 }
@@ -205,14 +208,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 18px 32px;
+  gap: 1.25rem;
+  padding: 1rem 5rem;
   border-bottom: 1px solid var(--line);
-  background: rgba(255,255,255,0.85);
+  background: var(--panel);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 10;
+  max-height: 4.875rem;
 }
 
 .brand {
@@ -226,7 +230,8 @@ button {
 }
 
 .brand h1 {
-  font-size: 22px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .header-actions {
@@ -242,7 +247,8 @@ button {
 }
 
 .search-bar input {
-  min-width: 280px;
+  min-width: 17.5rem;
+  max-width: 18.75rem;
 }
 
 .container {
