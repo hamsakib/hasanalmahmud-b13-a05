@@ -6,9 +6,10 @@
   <title>GitHub Issues Tracker</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand">
@@ -68,25 +69,25 @@
       <p id="modalMetaLine" class="modal-meta-line"></p>
       <p id="modalLabel" class="modal-label-line"></p>
     </div>
-
-    <button id="closeModalBtn" class="secondary-btn">Close</button>
   </div>
 
   <div class="modal-grid">
-    <div class="modal-field full-span">
-      <span>Description</span>
+    <div class="full-span">
       <p id="modalDescription"></p>
     </div>
 
     <div class="modal-field">
       <span>Assignee</span>
-      <p id="modalAuthor"></p>
+      <p id="modalAssignee"></p>
     </div>
 
     <div class="modal-field">
       <span>Priority</span>
       <p id="modalPriority"></p>
     </div>
+  </div>
+  <div id="close-btn-container">
+    <button id="closeModalBtn" class="secondary-btn">Close</button>
   </div>
 </dialog>
 

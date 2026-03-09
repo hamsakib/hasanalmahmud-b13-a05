@@ -17,21 +17,12 @@ export function formatDate(dateValue) {
 }
 
 export function getIssueStatus(issue) {
-  const rawStatus = issue?.status || issue?.category || '';
-  const text = String(rawStatus).toLowerCase();
+  const text = String(issue?.status || '').toLowerCase();
   return text.includes('closed') ? 'closed' : 'open';
 }
 
-function getCategoryName(issue) {
-  return normalizeText(issue?.category || issue?.status, 'General');
-}
-
-function getLabelName(issue) {
-  return normalizeText(issue?.label || issue?.labels?.[0] || issue?.tag, 'General');
-}
-
 function getAuthorName(issue) {
-  return normalizeText(issue?.author || issue?.assignee || issue?.createdBy, 'Unknown');
+  return normalizeText(issue?.author, 'Unknown');
 }
 
 function getPriority(issue) {
@@ -39,18 +30,7 @@ function getPriority(issue) {
 }
 
 function getId(issue) {
-  return issue?._id || issue?.id;
-}
-
-function createBadgeClass(type, text) {
-  const value = String(text).toLowerCase();
-
-  if (type === 'category') {
-    if (value.includes('open') || value.includes('bug')) return 'category-open';
-    if (value.includes('closed') || value.includes('enhancement')) return 'category-closed';
-  }
-
-  return '';
+  return issue?.id;
 }
 
 function getStatusIcon(status) {
@@ -77,8 +57,6 @@ export function renderIssues(container, issues, onOpenDetails) {
 
   issues.forEach((issue) => {
     const status = getIssueStatus(issue);
-    const category = getCategoryName(issue);
-    const label = getLabelName(issue);
     const author = getAuthorName(issue);
     const priority = getPriority(issue);
     const description = normalizeText(issue?.description, 'No description available.');
@@ -141,19 +119,24 @@ export function setActiveTab(tabButtons, activeTab) {
 }
 
 export function fillModal(issue, refs) {
-  const status = getIssueStatus(issue);
-  const label = getLabelName(issue);
-  const author = getAuthorName(issue);
-  const priority = getPriority(issue);
+  const status = issue?.status === "closed" ? "closed" : "open";
 
-  refs.modalTitle.textContent = normalizeText(issue?.title, 'Untitled issue');
-  refs.modalMetaLine.textContent =
-    `${status.toUpperCase()} • ${status === 'closed' ? 'Closed' : 'Opened'} by ${author} • ${formatDate(issue?.createdAt)}`;
+  const label = issue?.labels?.[0] ?? "No label";
+  const author = issue?.author ?? "Unknown";
+  const assignee = issue?.assignee ?? "Unassigned";
+  const priority = issue?.priority ?? "Unknown";
+
+  refs.modalTitle.textContent = issue?.title ?? "Untitled issue";
+ refs.modalMetaLine.innerHTML = `
+<span class="modal-status ${status}">
+  ${status.charAt(0).toUpperCase()+status.slice(1)}
+</span>
+ • Opened by ${author.split(/[_-]|\s/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}
+ • Created: ${formatDate(issue?.createdAt)}
+ • Last updated: ${formatDate(issue?.updatedAt)}
+`;
   refs.modalLabel.textContent = label;
-  refs.modalDescription.textContent = normalizeText(
-    issue?.description,
-    'No description available.'
-  );
-  refs.modalAuthor.textContent = author;
+  refs.modalDescription.textContent =issue?.description ?? "No description available.";
+  refs.modalAssignee.textContent = assignee.split(/[_-]|\s/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
   refs.modalPriority.textContent = priority;
 }

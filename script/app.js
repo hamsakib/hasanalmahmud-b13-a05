@@ -31,7 +31,7 @@ const refs = {
   modalMetaLine: document.getElementById('modalMetaLine'),
   modalLabel: document.getElementById('modalLabel'),
   modalDescription: document.getElementById('modalDescription'),
-  modalAuthor: document.getElementById('modalAuthor'),
+  modalAssignee: document.getElementById('modalAssignee'),
   modalPriority: document.getElementById('modalPriority'),
 };
 
