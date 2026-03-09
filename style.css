@@ -131,7 +131,7 @@ button {
   border: none;
   border-radius: 10px;
   height: 2.75rem;
-  padding: 1rem .75rem;
+  padding: 0 .75rem;
   font-weight: 600;
   transition: 0.2s ease;
   width: 8.25em;
@@ -605,11 +605,6 @@ button {
     font-size: 18px;
   }
 
-  .search-bar,
-  .header-actions,
-  .modal-top {
-    flex-direction: column;
-  }
 
   .issues-grid,
   .modal-grid {
