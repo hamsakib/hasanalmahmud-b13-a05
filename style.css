@@ -550,7 +550,8 @@ button {
     color: var(--panel);
     border-radius: 16px;
     padding: .375rem 1rem;
-    width: 3.75rem;
+    max-width: 5rem;
+    text-align: center;
 }
 .modal-field span {
   display: block;
@@ -589,17 +590,25 @@ button {
   font-size: .75rem;
 }
 
+.modal-status.open,
+.modal-status.closed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: .375rem .5rem;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .modal-status.open {
-color: var(--green);
+  background-color: var(--green);
+  color: white;
 }
 
 .modal-status.closed {
-  color: var(--purple);
-}
-
-#close-btn-container{
-    display: flex;
-    justify-content: flex-end;
+  background-color: var(--purple);
+  color: white;
 }
 
 #closeModalBtn{
