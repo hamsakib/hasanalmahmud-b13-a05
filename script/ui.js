@@ -155,7 +155,4 @@ export function fillModal(issue, refs) {
   refs.modalDescription.textContent = normalizeText(issue?.description, 'No description available.');
   refs.modalAuthor.textContent = author;
   refs.modalPriority.textContent = priority;
-  // refs.modalCategory.textContent = category;
-  // refs.modalLabel.textContent = label;
-  // refs.modalCreatedAt.textContent = formatDate(issue?.createdAt);
 }
